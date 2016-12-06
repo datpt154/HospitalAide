@@ -1,0 +1,45 @@
+  <ion-view title="HOSPITAL AIDE">
+    <ion-content padding="false" class="has-header" scroll="false">
+        <div class = "home-container">
+            <div class="myTestRow">
+                <ion-list>
+                  <br/><br/><br/>
+                  <ion-item class="item item-icon-right item-calm">Hello John!
+                      <p style="color:white;">The next appointment for you is</p>
+                      <p style="color:white;">on <b>{{nextday | date:'fullDate'}}</b></p>
+                      <i class="icon right ion-ios-arrow-forward"></i>
+                  </ion-item>
+              </ion-list>
+            </div>
+
+            <!-- Stay, Map, History buttons -->
+            <div class="button-bar row">
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-podium"></i><br/>MY STAY</button>
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-ios-location-outline"></i><br/>MAPS VS<br/>DIRECTIONS</button>
+                <button class="button button-calm button-block" ng-click="gotoMedication()">
+                  <i class="icon ion-ios-timer-outline"></i><br/>MEDICAL<br/>HISTORY
+                </button>
+            </div>
+            <!-- Calendar, Help, Symptoms buttons -->
+            <div class="button-bar row">
+                <button class="button button-calm button-block" ng-click="goToCalendar();">
+                  <i class="icon ion-calendar"></i><br/>MY<br/>CALENDAR</button>
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-medkit"></i><br/>HELP ME</button>
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-ios-search-strong"></i><br/>SYMPTOMS</button>
+            </div>
+            <!-- Clinician, Settings, App buttons -->
+            <div class="button-bar row">
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-person"></i><br/>MY<br/>CLINICIANS</button>
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-android-settings"></i><br/>SETTINGS</button>
+                <button class="button button-calm button-block" >
+                  <i class="icon ion-network"></i><br/>CONNECTED<br/>APPS</button>
+            </div>
+        </div>
+      </ion-content>
+</ion-view>

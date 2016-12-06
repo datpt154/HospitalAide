@@ -1,0 +1,33 @@
+<ion-view view-title="MEDICATION LIST">
+  <ion-content>
+    <ion-list class="medications">
+      <div class="item item-divider divider-title">Prescribed</div>
+      <div class="item item-stable" ng-click=toggleGroup(item); ng-repeat="item in medications" ng-class="{active: isItemShown(item)}">
+        {{item.medicationReference}}
+
+        <div class="list medication-detail" ng-show="isItemShown(item)">
+          <div class="item">
+            <span>{{item.dosageInstruction}}</span>
+          </div>
+          <div class="item" ng-if="item.dateWritten == undefined">
+            Prescribed by {{item.prescriber}}
+          </div>
+          <div class="item" ng-if="item.dateWritten != undefined">
+            Prescribed on {{item.dateWritten}} by {{item.prescriber}}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item item-divider divider-title">Patient Added</div>
+      <div class="item">
+        Vitamin C
+        <span class="item-note">100mg</span>
+      </div>
+      <div class="item">
+        Vitamin A
+        <span class="item-note">200 IU</span>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

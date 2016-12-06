@@ -1,0 +1,21 @@
+<ion-view view-title="UPCOMMING CALENDAR">
+  <ion-content overflow-scroll="true">
+    <ion-list id="{{value[0].scrollToID}}" ng-repeat="(key, value) in reformattedArray | groupBy: 'dateAttr' | toArray: true | orderBy: orderByDateTime">
+      <div class="item item-divider">{{value[0].dateAttr}}</div>
+
+      <div class="item" ng-repeat="event in value | orderBy: 'hourAttr'">
+        <div>
+          <i class="icon ion-clock icon-margin-right"></i> {{event | formatHourAndLocation}}
+        </div>
+        <div class="margin-top-10 text-bold">
+          <i class="icon ion-person icon-margin-right"></i> {{event | formatPerformer}}
+          <div class="text-margin-left">
+            {{event | formatDescription}}
+          </div>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+
+  <ng-include src="'templates/calendarFooter.html'" ng-init="calendarButtonActive = false"></ng-include>
+</ion-view>
